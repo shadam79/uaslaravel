@@ -7,24 +7,30 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Kode Barang</th>
+                        <th>No Barang</th>
                         <th>Nama Barang</th>
-                        <th>Jenis Barang</th>
-                        <th>Jumlah</th>
-                        <th>Harga Jual</th>
-                        <th>Aksi</th>
+                        <th>Varian Barang</th>
+                        <th>Tanggal Kadaluarsa</th>
+                        <th>Tanggal Produksi</th>
+                        <th>Harga Beli</th>
+                        <th>Action</th>
+
+
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($listBarang as $barang)
                     <tr>
-                        <td>{{$barang->kodebarang}}</td>
+                        <td>{{$barang->nobarang}}</td>
                         <td>{{$barang->namabarang}}</td>
-                        <td>{{$barang->jenisbarang}}</td>
-                        <td>{{$barang->jumlah}}</td>
-                        <td>{{$barang->hargajual}}</td>
+                        <td>{{$barang->varianbarang}}</td>
+                        <td>{{$barang->tanggalkadaluarsa}}</td>
+                        <td>{{$barang->tanggalproduksi}}</td>
+                        <td>{{$barang->hargabeli}}</td>
                         <td>
                             <a href="/edit/{{$barang->id}}">Edit</a>
+                            |
+                            <a href="/hapus/{{$barang->id}}">Hapus</a>
                         </td>
                     </tr>
                     @endforeach

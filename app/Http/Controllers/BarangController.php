@@ -21,20 +21,13 @@ class BarangController extends Controller
     }
     function processForm(Request $request)
     {
-        $request->validate([
-            'kodebarang' => 'required',
-            'namabarang' => 'required',
-            'jenisbarang' => 'required',
-            'jumlah' => 'required',
-            'hargajual' => 'required',
-        ]);
-
         $barang = Barang::create([
-            'kodebarang' => $request->kodebarang,
+            'nobarang' => $request->nobarang,
             'namabarang' => $request->namabarang,
-            'jenisbarang' => $request->jenisbarang,
-            'jumlah' => $request->jumlah,
-            'hargajual' => $request->hargajual,
+            'varianbarang' => $request->varianbarang,
+            'tanggalkadaluarsa' => $request->tanggalkadaluarsa,
+            'tanggalproduksi' => $request->tanggalproduksi,
+            'hargabeli' => $request->hargabeli,
         ]);
         if($barang){
             return redirect()->route('home');
@@ -48,22 +41,25 @@ class BarangController extends Controller
     }
     function processEdit(Request $request, $id)
     {
-        $request->validate([
-            'kodebarang' => 'required',
-            'namabarang' => 'required',
-            'jenisbarang' => 'required',
-            'jumlah' => 'required',
-            'hargajual' => 'required',
-        ]);
 
         $barang = Barang::find($id);
         $barang = $barang->update([
-            'kodebarang' => $request->kodebarang,
+            'nobarang' => $request->nobarang,
             'namabarang' => $request->namabarang,
-            'jenisbarang' => $request->jenisbarang,
-            'jumlah' => $request->jumlah,
-            'hargajual' => $request->hargajual,
+            'varianbarang' => $request->varianbarang,
+            'tanggalkadaluarsa' => $request->tanggalkadaluarsa,
+            'tanggalproduksi' => $request->tanggalproduksi,
+            'hargabeli' => $request->hargabeli,
         ]);
+
+        if($barang){
+            return redirect()->route('home');
+        }
+    }
+    function hapus($id)
+    {
+        $barang = Barang::find($id);
+        $barang->delete();
 
         if($barang){
             return redirect()->route('home');

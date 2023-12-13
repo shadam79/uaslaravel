@@ -6,25 +6,30 @@
         <form action="/processEdit/{{$barang->id}}" method="POST">
             @csrf
             <div class="mb-3">
-                <label for="kodebarang" class="form-label">Kode Barang</label>
-                <input type="text" class="form-control" id="kodebarang" name="kodebarang" value="{{ $barang->kodebarang}}">
+                <label for="nobarang" class="form-label">No Barang</label>
+                <input type="text" class="form-control" id="nobarang" name="nobarang" value="{{$barang->nobarang}}">
             </div>
             <div class="mb-3">
                 <label for="namabarang" class="form-label">Nama Barang</label>
-                <input type="text" class="form-control" id="namabarang" name="namabarang" value="{{ $barang->namabarang}}">
+                <input type="text" class="form-control" id="namabarang" name="namabarang" value="{{$barang->namabarang}}">
             </div>
             <div class="mb-3">
-                <label for="jenisbarang" class="form-label">Jenis Barang</label>
-                <input type="text" class="form-control" id="jenisbarang" name="jenisbarang" value="{{ $barang->jenisbarang }}">
+                <label for="varianbarang" class="form-label">Varian Barang</label>
+                <input type="text" class="form-control" id="varianbarang" name="varianbarang" value="{{$barang->varianbarang}}">
             </div>
             <div class="mb-3">
-                <label for="jumlah" class="form-label">Jumlah</label>
-                <input type="number" class="form-control" id="jumlah" name="jumlah" value="{{ $barang->jumlah}}">
+                <label for="tanggalkadaluarsa" class="form-label">Tanggal Kadaluarsa</label>
+                <input type="date" class="form-control" id="tanggalkadaluarsa" name="tanggalkadaluarsa" value="{{$barang->tanggalkadaluarsa}}">
             </div>
             <div class="mb-3">
-                <label for="hargajual" class="form-label">Harga Jual</label>
-                <input type="number" class="form-control" id="hargajual" name="hargajual" value="{{ $barang->hargajual }}">
+                <label for="tanggalproduksi" class="form-label">Tanggal Produksi</label>
+                <input type="date" class="form-control" id="tanggalproduksi" name="tanggalproduksi" value="{{$barang->tanggalproduksi}}">
             </div>
+            <div class="mb-3">
+                <label for="hargabeli" class="form-label">Harga Beli</label>
+                <input type="text" class="form-control" id="hargabeli" name="hargabeli" value="{{$barang->hargabeli}}">
+            </div>
+            
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
